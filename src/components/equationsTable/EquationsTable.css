@@ -1,0 +1,37 @@
+.equations-table {}
+
+.equations-table .equation-table {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    border: 2px solid #3633331e;
+    border-radius: 4px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.equations-table h4{
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+.equations-table img{
+    /* width: 200px; */
+    margin: 12px 0;
+}
+
+.equations-table .equation-table .equation {
+    width: 100%;
+    border: 2px solid #3633331e;
+    cursor: pointer;
+}
+
+.equations-table .equation-table .equation:hover{
+    background-color: var(--main-color);
+    color: #fff;
+}
+
+.equations-table .equation-table .equation span {
+    /* border: 2px solid #3633331e; */
+    border-radius: 4px;
+}

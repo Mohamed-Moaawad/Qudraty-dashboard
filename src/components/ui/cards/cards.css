@@ -1,0 +1,43 @@
+.custom-card {
+    border-radius: 8px;
+    box-shadow: 0 0 2px 3px #eee;
+    width: 100%;
+    height: 100%;
+}
+
+.custom-card .image{
+    width: 100%;
+    height: 150px;
+    margin-bottom: 15px;
+}
+
+.custom-card .image img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.custom-card h3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--title-color);
+}
+
+.custom-card div.info-card span {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--title-color);
+}
+
+.custom-card div.info-card span.highlight {
+    font-size: 0.8rem;
+    background-color: var(--main-color);
+    color: var(--white-color);
+    padding: 3px 12px;
+    border-radius: 30px;
+}
+
+.custom-card h6 {
+    color: var(--title-color);
+    font-weight: 400;
+}

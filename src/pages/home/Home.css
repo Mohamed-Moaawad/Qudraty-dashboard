@@ -1,0 +1,66 @@
+.home-page {
+    /* background-color: red; */
+    min-height: 100vh;
+}
+
+.home-page .stats-data {
+    border-bottom: 2px solid #ddd;
+}
+
+.home-page .stats-data p {
+    font-size: 16px;
+    color: var(--text-color);
+}
+
+/* ==========================
+    chart box
+============================= */
+.home-page .stats-data .chart-container {
+    /* background-color: red; */
+    border-left: 2px solid #ddd;
+}
+
+.home-page .stats-data .chart-box .total-mony {}
+
+.home-page .stats-data .chart-box .total-mony h5 {
+    font-size: 1.3rem;
+    color: var(--title-color);
+    font-weight: 600;
+}
+
+.home-page .stats-data .chart-box .total-mony .percentage {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.home-page .stats-data .chart-box .total-mony .percentage p {
+    font-size: 14px;
+}
+
+.home-page .stats-data .chart-box .total-mony .percentage span {
+    font-size: 17px;
+    font-size: 500;
+    margin-left: 5px;
+}
+
+.home-page .stats-data .chart-box .total-mony .percentage span,
+.home-page .stats-data .chart-box .total-mony .percentage svg {
+    color: var(--success-color);
+}
+
+
+/* ==========================
+    chart box
+============================= */
+.home-page .stats-data .circles-box{
+    /* background-color: aqua; */
+    width: 100%;
+    padding-right: 40px;
+}
+
+@media(max-width:1023px){
+    .home-page .stats-data .circles-box{
+        padding-right: 0px;
+    }
+}

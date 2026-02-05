@@ -1,0 +1,182 @@
+import { useState } from "react";
+import { useAppDispatch } from "../../hooks/hooks";
+import { useForm, type SubmitHandler } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import CustomButton from "../ui/buttons/CustomButton";
+import EquationsTable from "../equationsTable/EquationsTable";
+import CustomInput from "../ui/inputs/CustomInput";
+import { Radical, X } from "lucide-react";
+import { AddNewQuestionToPlacementExamSchema, type AddNewQuestionToPlacementExamType } from "../../validations/AddNewQuestionToPlacementExamSchema";
+import thunkAddNewQuestionToPlacementExam from "../../store/exams/thunk/PlacementExam/thunkAddNewQuestionToPlacementExam";
+import toast from "react-hot-toast";
+import thunkGetPlacementExam from "../../store/exams/thunk/PlacementExam/thunkGetPlacementExam";
+
+const AddNewQuestionToPlacementExam = ({ close }: { close: () => void }) => {
+    const dispatch = useAppDispatch();
+
+    const { register, handleSubmit, reset, formState: { errors } } = useForm<AddNewQuestionToPlacementExamType>({
+        mode: 'onChange',
+        resolver: zodResolver(AddNewQuestionToPlacementExamSchema),
+    });
+
+    const onSubmit: SubmitHandler<AddNewQuestionToPlacementExamType> = async (data) => {
+        // console.log(data, isImage);
+        const loadToast = toast.loading('جاري إضافة السؤال');
+        try {
+            const newData = {
+                questionText: data.questionText,
+                imageUrl: isImage && `https://mathpad.ai/api/v1/latex2image?latex=${encodeURIComponent(isImage)}&format=png&scale=3`,
+                options: [
+                    { text: data.answers.answer1, isCorrect: data.correctAnswerIndex === 1 },
+                    { text: data.answers.answer2, isCorrect: data.correctAnswerIndex === 2 },
+                    { text: data.answers.answer3, isCorrect: data.correctAnswerIndex === 3 },
+                    { text: data.answers.answer4, isCorrect: data.correctAnswerIndex === 4 },
+                ]
+            }
+            await dispatch(thunkAddNewQuestionToPlacementExam({ data: newData })).unwrap()
+            dispatch(thunkGetPlacementExam({ pageNumber: 1 }));
+            reset();
+            close();
+            toast.success('تم إضافة السؤال بنجاح');
+        } catch (error) {
+            toast.success(`حدث خطأ : ${error}`);
+        } finally {
+            toast.dismiss(loadToast);
+        }
+    }
+
+    const [isEquation, setIsEquation] = useState<boolean>(false);
+    const [isImage, setIsImage] = useState<string>('');
+
+    const addEquation = () => {
+        setIsEquation((state) => state = !state);
+    }
+
+    return (
+        <form
+            className="forms-component"
+            onSubmit={handleSubmit(onSubmit)}
+        >
+            {/* add Equation */}
+            <div className="w-full flex justify-end">
+                <div className="w-full sm:w-6/12 md:w-4/12 lg:w-3/12">
+                    <CustomButton
+                        type="button"
+                        text={isEquation ? "اخفاء" : "إضافة معادلة رياضية"}
+                        radius="lg"
+                        variant="light"
+                        rightIcon={isEquation ? <X color="var(--danger-color)" /> : <Radical />}
+                        onClick={addEquation}
+                    />
+                </div>
+            </div>
+            {isEquation && (
+                <EquationsTable setIsImage={setIsImage} />
+            )}
+
+
+            {/* form */}
+            <div className="flex flex-wrap justify-between items-center">
+                {isImage ? (
+                    <div className="w-full flex flex-wrap">
+                        <div className="w-8/12 mb-6">
+                            <CustomInput
+                                type="text"
+                                label="نص السؤال"
+                                placeholder="نص السؤال"
+                                error={!!errors.questionText}
+                                errorText={errors.questionText?.message}
+                                {...register('questionText')}
+                            />
+                        </div>
+                        <div className="w-4/12 flex items-center justify-center px-2">
+                            <img src={`https://mathpad.ai/api/v1/latex2image?latex=${encodeURIComponent(isImage)}&format=png&scale=3`} alt="question" />
+                        </div>
+                    </div>
+                ) : (
+                    <div className="w-full mb-6">
+                        <CustomInput
+                            type="text"
+                            label="نص السؤال"
+                            placeholder="نص السؤال"
+                            error={!!errors.questionText}
+                            errorText={errors.questionText?.message}
+                            {...register('questionText')}
+                        />
+                    </div>
+                )}
+
+                <div className="w-12/12 mb-6">
+                    <CustomInput
+                        type="number"
+                        label="رقم الاجابة الصحيحة"
+                        placeholder="رقم الاجابة الصحيحة"
+                        error={!!errors.correctAnswerIndex}
+                        errorText={errors.correctAnswerIndex?.message}
+                        {...register('correctAnswerIndex', {
+                            valueAsNumber: true
+                        })}
+
+                    />
+                </div>
+            </div>
+            {/* answers */}
+            <div className="flex flex-wrap">
+                <div className="w-6/12 p-2">
+                    <CustomInput
+                        type="text"
+                        label="الإجابة الأولى (1)"
+                        placeholder="الإجابة الأولى"
+                        error={!!errors.answers?.answer1}
+                        errorText={errors.answers?.answer1?.message}
+                        {...register('answers.answer1')}
+                    />
+                </div>
+
+                <div className="w-6/12 p-2">
+                    <CustomInput
+                        type="text"
+                        label="الإجابة الثانية (2)"
+                        placeholder="الإجابة الثانية"
+                        error={!!errors.answers?.answer2}
+                        errorText={errors.answers?.answer2?.message}
+                        {...register('answers.answer2')}
+                    />
+                </div>
+
+                <div className="w-6/12 p-2">
+                    <CustomInput
+                        type="text"
+                        label="الإجابة الثالثة (3)"
+                        placeholder="الإجابة الثالثة"
+                        error={!!errors.answers?.answer3}
+                        errorText={errors.answers?.answer3?.message}
+                        {...register('answers.answer3')}
+                    />
+                </div>
+
+                <div className="w-6/12 p-2">
+                    <CustomInput
+                        type="text"
+                        label="الإجابة الرابعة (4)"
+                        placeholder="الإجابة الرابعة"
+                        error={!!errors.answers?.answer4}
+                        errorText={errors.answers?.answer4?.message}
+                        {...register('answers.answer4')}
+                    />
+                </div>
+            </div>
+
+            <div className="w-full sm:w-3/12 md:w-2/12 mt-4">
+                <CustomButton
+                    type="submit"
+                    text="إضافة"
+                    radius="sm"
+                    variant="filled"
+                />
+            </div>
+        </form>
+    )
+}
+
+export default AddNewQuestionToPlacementExam

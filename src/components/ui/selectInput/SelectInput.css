@@ -1,0 +1,11 @@
+.select-input {
+    /* width: 250px; */
+}
+
+.select-input select {
+    border: none;
+    /* min-width: 150px; */
+    text-align: right;
+}
+
+.select-input option {}

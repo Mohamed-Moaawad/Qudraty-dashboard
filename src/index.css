@@ -1,0 +1,224 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Cairo";
+  src: url("/font/Cairo-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cairo";
+  src: url("/font/Cairo-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cairo";
+  src: url("/font/Cairo-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cairo";
+  src: url("/font/Cairo-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cairo";
+  src: url("/font/Cairo-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cairo";
+  src: url("/font/Cairo-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cairo";
+  src: url("/font/Cairo-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+
+.head-title-component {
+  @apply flex items-center gap-8;
+}
+
+/* forms-component */
+.forms-component {
+  @apply flex flex-col gap-6 py-5;
+}
+
+.forms-actions-btn {
+  @apply flex items-center gap-5 mt-10;
+}
+
+.page-details {
+  @apply w-full mb-20 flex flex-wrap justify-between items-end;
+}
+
+
+:root {
+  --main-color: #4A8CD8;
+  /* --main-color: #e0e0e0; */
+  /* --main-color: #333; */
+  --title-color: #06052E;
+  --text-color: #777777;
+  --success-color: #34BF49;
+  --danger-color: #CA0000;
+  --line-color: #dfdfdf;
+
+  --white-color: #fff;
+  --black-color: #000;
+
+  --transition: all .4s;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #003b7e59;
+  background-color: #333;
+  background-color: #c7c7c7a2;
+  border-radius: 30px;
+}
+
+body {
+  direction: rtl;
+  font-family: "Cairo", sans-serif !important;
+}
+
+::selection {
+  background-color: var(--main-color);
+  color: var(--white-color);
+}
+
+input {
+  text-align: right !important;
+}
+
+h4.text-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+  color: var(--title-color);
+}
+
+
+.question {
+  background-color: #e0e0e0cc;
+  margin: 10px 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* ==========================
+  main Layout
+============================= */
+main {}
+
+main div.sidebar-box {
+  width: 15%;
+  position: fixed;
+  z-index: 100;
+  transition: var(--transition);
+}
+
+main div.outlet-box {
+  width: 85%;
+  margin-right: 15%;
+}
+
+@media(max-width:1400px) {
+  main div.sidebar-box {
+    width: 20%;
+  }
+}
+
+@media(max-width:1100px) {
+  main div.sidebar-box {
+    width: 23%;
+  }
+}
+
+@media(max-width:991px) {
+  main div.sidebar-box {
+    width: 28%;
+  }
+}
+
+@media(max-width:800px) {
+  main div.sidebar-box {
+    width: 33%;
+  }
+}
+
+@media(max-width:700px) {
+  main div.sidebar-box {
+    width: 40%;
+  }
+}
+
+@media(max-width:550px) {
+  main div.sidebar-box {
+    width: 60%;
+  }
+}
+
+
+@media(max-width:1400px) {
+  main div.sidebar-box {
+    right: -100%;
+  }
+
+  main div.sidebar-box.open {
+    right: 0px;
+  }
+
+  main div.sidebar-box.closed {
+    right: -100%;
+  }
+
+  main div.outlet-box {
+    width: 100%;
+    margin-right: 0;
+  }
+}
+
+
+
+
+
+
+
+
+
+/* @media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+} */

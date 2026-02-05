@@ -1,0 +1,10 @@
+.feature-list{
+    position: relative;
+}
+
+.feature-list .add-feature{
+    display: none;
+}
+.feature-list .add-feature.opened{
+    display: flex;
+}

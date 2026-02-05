@@ -1,0 +1,51 @@
+.auth-page {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F8F9FA;
+}
+
+.login-page,
+.forgot-password {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-page form,
+.forgot-password form {
+    padding: 45px 20px;
+    background-color: var(--white-color);
+}
+
+.login-page form h2,
+.forgot-password form h2 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.forgot-password form h2{
+    margin-bottom: 10px;
+}
+
+.forgot-password form p.head-text{
+    color: var(--text-color);
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+.login-page form a ,
+.forgot-password form a {
+    color: var(--main-color);
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.forgot-password form .back-btn a{
+    color: var(--main-color);
+}

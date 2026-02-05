@@ -1,0 +1,58 @@
+.subscription-cards {}
+
+.subscription-cards .subscription-card {
+    background-color: #F8F9FA;
+    padding: 23px;
+    border-radius: 8px;
+    box-shadow: 0 0 3px #aaaaaa;
+}
+
+.subscription-cards .subscription-card span.mark {
+    background-color: var(--main-color);
+    color: var(--white-color);
+    padding: 3px 18px;
+    border-radius: 30px;
+    font-size: 1rem;
+}
+
+.subscription-cards .subscription-card h4 {
+    color: var(--title-color);
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 20px 0;
+}
+
+/* .subscription-cards .subscription-card p.description {
+    color: var(--text-color);
+    background-color: #7aaae21c;
+    padding: 3px 8px;
+    border-radius: 4px;
+} */
+
+.subscription-cards .subscription-card h4 sub {
+    font-weight: 500;
+}
+
+.subscription-cards .subscription-card ul li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--title-color);
+    margin: 12px 0;
+    background-color: #7aaae21c;
+}
+
+.subscription-cards .subscription-card ul li svg{
+    color: var(--success-color);
+}
+
+.subscription-cards div.status span {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--title-color);
+}
+
+.subscription-cards div.status p {
+    color: var(--text-color);
+}
+

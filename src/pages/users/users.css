@@ -1,0 +1,12 @@
+.user-details .students-table {
+    background-color: #6290cf4b;
+}
+
+.user-details .students-table table th,
+.user-details .students-table table td{
+    text-align: center;
+}
+
+.user-details .students-table table td{
+    cursor: pointer;
+}

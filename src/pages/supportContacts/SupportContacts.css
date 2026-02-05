@@ -1,0 +1,43 @@
+.support-contacts {}
+
+.support-contacts .ticket {
+    padding: 25px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+.support-contacts .ticket h4 {
+    color: var(--title-color);
+    font-weight: 400;
+    font-weight: bold;
+}
+
+.support-contacts .ticket h4 span {
+    color: var(--title-color);
+    font-weight: 500;
+}
+
+.support-contacts .ticket span {
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.support-contacts .ticket h3 {
+    color: var(--title-color);
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.support-contacts .ticket p {
+    color: var(--text-color);
+}
+
+.support-contacts .ticket .ticket-footer {
+    border-top: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.support-contacts .ticket .ticket-footer a {
+    color: var(--main-color);
+    text-decoration: underline;
+}

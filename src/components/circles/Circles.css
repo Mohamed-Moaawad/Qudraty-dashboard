@@ -1,0 +1,104 @@
+.home-page .stats-data .all-circles {
+    /* background-color: red; */
+    position: relative;
+    /* overflow: hidden; */
+    padding: 0 10px;
+}
+
+.home-page .stats-data .all-circles .circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.home-page .stats-data .all-circles .circle::after {
+    content: '';
+    position: absolute;
+    width: 110%;
+    height: 110%;
+    border-radius: 50%;
+    border: 2px solid var(--main-color);
+    border-left: none;
+    border-top: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.home-page .stats-data .all-circles .circle .num h5 {
+    color: var(--white-color);
+    font-size: 2.1rem;
+}
+
+.home-page .stats-data .all-circles .circle .num span {
+    color: var(--white-color);
+}
+
+.home-page .stats-data .all-circles .lg-circle {
+    width: 180px;
+    height: 180px;
+    background-color: #4a8cd8da;
+}
+
+.home-page .stats-data .all-circles .md-circle {
+    width: 150px;
+    height: 150px;
+    background-color: #1402bed0;
+    transform: translate(-180px, -50%);
+}
+
+.home-page .stats-data .all-circles .sm-circle {
+    width: 120px;
+    height: 120px;
+    background-color: #6463D6;
+    transform: translate(-130px, 40%);
+}
+
+@media (max-width: 1200px) {
+    .home-page .stats-data .all-circles .lg-circle {
+        width: 150px;
+        height: 150px;
+    }
+
+    .home-page .stats-data .all-circles .md-circle {
+        width: 120px;
+        height: 120px;
+        transform: translate(-150px, -50%);
+    }
+
+    .home-page .stats-data .all-circles .sm-circle {
+        width: 90px;
+        height: 90px;
+        transform: translate(-110px, 50%);
+    }
+
+    .home-page .stats-data .all-circles .circle .num h5 {
+        font-size: 1.5rem;
+    }
+}
+
+/* @media (max-width: 1100px) {
+    .home-page .stats-data .all-circles .lg-circle {
+        width: 120px;
+        height: 120px;
+    }
+
+    .home-page .stats-data .all-circles .md-circle {
+        width: 90px;
+        height: 90px;
+        transform: translate(-130px, -50%);
+    }
+
+    .home-page .stats-data .all-circles .sm-circle {
+        width: 70px;
+        height: 70px;
+        transform: translate(-100px, 50%);
+    }
+
+    .home-page .stats-data .all-circles .circle .num h5 {
+        font-size: 1.4rem;
+    }
+} */

@@ -1,0 +1,44 @@
+.root-answers {
+    position: relative;
+    /* border: 1px solid var(--mantine-color-gray-3); */
+    transition: border-color 150ms ease, background-color 150ms ease;
+    cursor: pointer;
+}
+
+.root-answers .m_4081bf90 {
+    align-items: center !important;
+}
+
+/* لما الكارت يتعلم (Radio checked) */
+.root-answers[data-checked] {
+    border-color: var(--main-color);
+    background-color: var(--mantine-color-blue-light);
+}
+
+/* hover light mode */
+@media (prefers-color-scheme: light) {
+    .root-answers:hover {
+        background-color: var(--mantine-color-gray-0);
+    }
+}
+
+/* hover dark mode */
+@media (prefers-color-scheme: dark) {
+    .root-answers:hover {
+        background-color: var(--mantine-color-dark-6);
+    }
+}
+
+.root-answers .m_717d7ff6.mantine-RadioIndicator-indicator {
+    position: absolute;
+    z-index: 1;
+}
+
+
+.root-answers .m_46b77525.mantine-InputWrapper-root {
+    width: 100%;
+}
+
+.root-answers .m_46b77525.mantine-InputWrapper-root input {
+    padding-right: 25px !important;
+}

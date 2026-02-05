@@ -1,0 +1,9 @@
+.m_8fb7ebe7:focus, .m_8fb7ebe7:focus-within {
+    outline: none;
+    --input-bd: var(--main-color) !important;
+}
+
+.file-input button{
+    display: flex;
+    align-items: center;
+}

@@ -1,0 +1,16 @@
+import { createAsyncThunk } from "@reduxjs/toolkit";
+import axiosClient from "../../../../api/axiosClient";
+import axiosErrorHandler from "../../../../utils/axiosErrorHandler";
+
+
+const thunkGetPlacementExam = createAsyncThunk('exams/thunkGetPlacementExam', async ({ pageNumber }: { pageNumber?: number }, thunkAPI) => {
+    const { rejectWithValue } = thunkAPI;
+    try {
+        const res = await axiosClient.get(`admin/PlacementExam?${pageNumber}`);
+        return res.data.data;
+    } catch (error) {
+        return rejectWithValue(axiosErrorHandler(error));
+    };
+});
+
+export default thunkGetPlacementExam;

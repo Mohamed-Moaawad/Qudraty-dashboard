@@ -1,0 +1,46 @@
+/*===================*/
+.question-and-answers-form .radio-group-box button {
+    position: relative;
+}
+
+.question-and-answers-form .radio-group-box .m_717d7ff6.mantine-RadioIndicator-indicator {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.question-and-answers-form .radio-group-box button .m_46b77525.mantine-InputWrapper-root {
+    width: 100%;
+}
+
+.question-and-answers-form .radio-group-box button .m_46b77525.mantine-InputWrapper-root input {
+    padding-right: 25px;
+}
+
+
+/* .add-new-topic-form .upload-file {
+    width: 100%;
+    background-color: #f1f3f5;
+    border-radius: 4px;
+    padding: 12px;
+    position: relative;
+}
+
+.add-new-topic-form .upload-file p{
+    color: #999;
+    font-size: 14px;
+}
+
+.add-new-topic-form .upload-file.error p{
+    color: var(--danger-color);
+}
+
+.add-new-topic-form .upload-file input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+} */

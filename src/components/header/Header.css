@@ -1,0 +1,53 @@
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding-bottom: 35px;
+}
+
+header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    height: 1px;
+    background-color: var(--line-color);
+}
+
+header h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    transition: var(--transition);
+}
+
+header .actions {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+header .actions .menu-button{
+    display: none;
+}
+
+@media(max-width: 1400px){
+    header .actions .menu-button{
+        display: flex;
+    }
+}
+
+@media(max-width: 991px){
+    header h2{
+        font-size: 1.5rem;
+    }
+}
+
+@media(max-width: 650px){
+    header h2{
+        font-size: 1.3rem;
+    }
+}
