@@ -19,7 +19,7 @@ const SubscriptionCards = () => {
     const { subscriptionPlans, loading } = useAppSelector((state) => state.subscriptions)
 
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const [selectedPlanId, setSelectedPlanId] = useState<string | null>(null);
+    const [, setSelectedPlanId] = useState<string | null>(null);
 
     const openEditModal = (planId: string) => {
         setSelectedPlanId(planId);

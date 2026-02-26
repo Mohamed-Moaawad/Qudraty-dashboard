@@ -51,6 +51,9 @@ const Coupons = () => {
                 />
                 <div className="mt-5">
                     <PaginationTable
+                        activePage={1}
+                        onPageChange={() => { }}
+                        totalPages={10}
                         data={coupons}
                         columns={[
                             { key: 'id', label: 'ID' },

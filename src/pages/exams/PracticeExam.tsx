@@ -1,4 +1,3 @@
-import QuestionAndAnswersForm from "../../components/forms/QuestionAndAnswersForm"
 import CustomList from "../../components/lists/CustomList"
 import CustomInput from "../../components/ui/inputs/CustomInput"
 
@@ -44,6 +43,7 @@ const PracticeExam = () => {
 
             <CustomList
                 data={[]}
+                onEdit={() => { }}
             />
         </section>
     )

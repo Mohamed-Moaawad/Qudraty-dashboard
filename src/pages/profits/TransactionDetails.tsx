@@ -29,7 +29,7 @@ const TransactionDetails = () => {
                             type="text"
                             label="الحالة"
                             value={status ? 'Active' : 'Expired'}
-                            icon={status ? "✅" : "❌"}
+                            leftSection={status ? "✅" : "❌"}
                             error={!status}
                             readOnly
                         />
@@ -40,7 +40,7 @@ const TransactionDetails = () => {
                             type="text"
                             label="تاريخ البداية"
                             value="6/7/2025"
-                            icon={"📆"}
+                            leftSection={"📆"}
                             readOnly
                         />
                     </div>
@@ -49,7 +49,7 @@ const TransactionDetails = () => {
                             type="text"
                             label="تاريخ الانتهاء"
                             value="6/8/2025"
-                            icon={"📆"}
+                            leftSection={"📆"}
                             readOnly
                         />
                     </div>
@@ -58,7 +58,7 @@ const TransactionDetails = () => {
                             type="text"
                             label="تاريخ العملية"
                             value="6/7/2025"
-                            icon={"📆"}
+                            leftSection={"📆"}
                             readOnly
                         />
                     </div>
@@ -68,7 +68,7 @@ const TransactionDetails = () => {
                             type="text"
                             label="نوع الاشتراك"
                             value="شهري"
-                            icon={"🌐"}
+                            leftSection={"🌐"}
                             readOnly
                         />
                     </div>
@@ -77,7 +77,7 @@ const TransactionDetails = () => {
                             type="text"
                             label="طريقة الدفع"
                             value="Apple Pay"
-                            icon={"💳"}
+                            leftSection={"💳"}
                             readOnly
                         />
                     </div>
@@ -87,7 +87,7 @@ const TransactionDetails = () => {
                             type="text"
                             label="المبلغ المدفوع"
                             value="2000 .رس"
-                            icon={'💸'}
+                            leftSection={'💸'}
                             readOnly
                         />
                     </div>
@@ -96,7 +96,7 @@ const TransactionDetails = () => {
                             type="text"
                             label="كود الخصم"
                             value="NEW50"
-                            icon={'🏷️'}
+                            leftSection={'🏷️'}
                             readOnly
                         />
                     </div>

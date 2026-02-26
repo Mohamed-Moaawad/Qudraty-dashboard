@@ -121,7 +121,7 @@ const Transactions = () => {
         <section className="transactions">
             {/* header */}
             <Header text="تفاصيل الاشتراكات" />
-            
+
             <Container>
                 {/* Title */}
                 <div className="w-full mt-10 mb-5">
@@ -130,6 +130,9 @@ const Transactions = () => {
                 {/* Profits Table */}
                 {/* Profits Table */}
                 <PaginationTable
+                    activePage={1}
+                    onPageChange={() => { }}
+                    totalPages={10}
                     data={subscriptionsUsers}
                     columns={[
                         { key: 'id', label: 'ID' },

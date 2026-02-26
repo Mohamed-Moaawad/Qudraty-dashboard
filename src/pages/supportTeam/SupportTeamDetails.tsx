@@ -6,6 +6,7 @@ const SupportTeamDetails = () => {
     return (
         <section className='support-team-details'>
             {/* <Header  /> */}
+            {id}
         </section>
     )
 }

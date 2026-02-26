@@ -24,7 +24,7 @@ type TPropsData = {
 };
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const AddNewTopicForm = ({ data, subjectId, close }: TPropsData) => {
+const AddNewTopicForm = ({ subjectId, close }: TPropsData) => {
     // const dateParser: DateInputProps['dateParser'] = (input) => {
     //     if (input === 'WW2') {
     //         return '1939-09-01';

@@ -93,6 +93,9 @@ const SupportTeam = () => {
                 {/* table */}
                 <div className='mt-10'>
                     <PaginationTable
+                        activePage={1}
+                        onPageChange={() => { }}
+                        totalPages={10}
                         data={data}
                         columns={[
                             { key: 'name', label: 'الاسم' },

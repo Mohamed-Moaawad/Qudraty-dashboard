@@ -31,10 +31,7 @@ const SubjectDetails = () => {
     const dispatch = useAppDispatch();
     const { singleSubject, loading } = useAppSelector((state) => state.subjects);
     const { topics, loading: TopicsLoading } = useAppSelector((state) => state.topics);
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { book, loading: booksLoading } = useAppSelector((state) => state.books);
-
-    console.log(book[0])
+    const { book, } = useAppSelector((state) => state.books);
 
     useEffect(() => {
         if (subjectId) {
