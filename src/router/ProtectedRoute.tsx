@@ -14,7 +14,7 @@ const ProtectedRoute = () => {
     if (!user) return null;
 
     if (!user.roles.includes('Admin')) {
-        return <Navigate to='/unauthorized' replace />;
+        return <Navigate to='/auth/login' replace />;
     };
 
     return <Outlet />;

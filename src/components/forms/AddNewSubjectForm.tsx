@@ -12,7 +12,7 @@ import InputFile from "../ui/inputs/InputFile";
 import thunkGetSubjectType from "../../store/subjectType/thunkGetSubjectType";
 import { useEffect } from "react";
 
-const AddNewSubjectForm = () => {
+const AddNewSubjectForm = ({ close }: { close: () => void }) => {
     const dispatch = useAppDispatch();
     const { allSubjectType } = useAppSelector((state) => state.subjectType)
     const { loading } = useAppSelector((state) => state.subjects)
@@ -35,6 +35,7 @@ const AddNewSubjectForm = () => {
         }
         await dispatch(thunkAddNewSubject(newData));
         reset();
+        close();
     }
 
     useEffect(() => {

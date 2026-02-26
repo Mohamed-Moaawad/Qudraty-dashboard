@@ -112,7 +112,7 @@ const Subjects = () => {
             </Container>
 
             <CustomModal title="إضافة مادة جديدة" opened={opened} onClose={close}>
-                <AddNewSubjectForm />
+                <AddNewSubjectForm close={close} />
             </CustomModal>
         </section>
     )
